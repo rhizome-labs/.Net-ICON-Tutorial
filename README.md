@@ -5,7 +5,5 @@
     alt="Rhizome logo">
 </p>
 
+<h1 align="center">.Net Tutorial Console Application </a> </h1>
 
-# .Net-Tutorial-ICON
-
-This is the application built during the .Net-Tutorial-ICON series, presented by Andrew of Rhizome
