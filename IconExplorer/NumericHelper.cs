@@ -7,16 +7,11 @@ namespace IconExplorer
 {
     public class NumericHelper
     {
-        public static string Loop2ICX(string bigInt, bool trimTrailing = true)
+        public static double Loop2ICX(BigInteger balance)
         {
-
-            BigInteger icxloop = BigInteger.Parse(bigInt);
-
-            BigInteger numericBase = BigInteger.Parse("10");
-
-            BigInteger result = icxloop / BigInteger.Pow(numericBase, 18);
-
-            return result.ToString();
+            var d = (double)balance;
+            var result = 1 * d / Math.Pow(10, 18);
+            return result;
         }
     }
 }
