@@ -25,6 +25,9 @@ namespace IconExplorer
                         case 3:
                             Episode1.SendICX();
                             break;
+                        case 4:
+                            Episode2.SearchTransaction();
+                            break;
                     }
                 }
             }

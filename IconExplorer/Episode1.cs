@@ -11,7 +11,7 @@ namespace IconExplorer
 {
     public static class Episode1
     {
-        static readonly string TestNetUrl = "https://bicon.net.solidwallet.io/api/v3";
+      
       
         public static void CreateKeyStore()
         {
@@ -62,8 +62,8 @@ namespace IconExplorer
         }
         public static void DisplayBalance()
         {
-          var wallet = Helper.LoadWallet();
-          var getBalance = GetBalance.Create(TestNetUrl);
+          var wallet = WalletHelper.LoadWallet();
+          var getBalance = GetBalance.Create(WalletHelper.TestNetUrl);
           var balance = getBalance.Invoke(wallet.Address).Result;
 
           Console.WriteLine($"Your current ICX balance for {wallet.Address} is : {NumericHelper.Loop2ICX(balance)} ICX");
@@ -71,7 +71,7 @@ namespace IconExplorer
 
         public static void SendICX()
         {
-            var wallet = Helper.LoadWallet();
+            var wallet = WalletHelper.LoadWallet();
             Console.WriteLine();
             Console.WriteLine("How much ICX do you want to send?");
             var amount = BigInteger.Parse(Console.ReadLine());
@@ -81,7 +81,7 @@ namespace IconExplorer
             var toAddress = Console.ReadLine();
 
             BigInteger stepLimit = NumericsHelper.ICX2Loop("0.000000001");
-            Hash32 result = Helper.Transfer(toAddress, wallet.PrivateKey, amountToSend, stepLimit, TestNetUrl);
+            Hash32 result = WalletHelper.Transfer(toAddress, wallet.PrivateKey, amountToSend, stepLimit, WalletHelper.TestNetUrl);
 
             Console.WriteLine($"Transfer successful tx: {result}");
         }

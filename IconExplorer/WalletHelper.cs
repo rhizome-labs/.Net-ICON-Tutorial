@@ -14,8 +14,9 @@ using IconSDK.Types;
 
 namespace IconExplorer
 {
-    public class Helper
+    public class WalletHelper
     {
+        public static readonly string TestNetUrl = "https://bicon.net.solidwallet.io/api/v3";
 
         public static Wallet LoadWallet()
         {
