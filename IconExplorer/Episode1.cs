@@ -66,7 +66,7 @@ namespace IconExplorer
           var getBalance = GetBalance.Create(WalletHelper.TestNetUrl);
           var balance = getBalance.Invoke(wallet.Address).Result;
 
-          Console.WriteLine($"Your current ICX balance for {wallet.Address} is : {NumericHelper.Loop2ICX(balance)} ICX");
+          Console.WriteLine($"Your current ICX balance for {wallet.Address} is : {Utils.Loop2ICX(balance)} ICX");
         }
 
         public static void SendICX()

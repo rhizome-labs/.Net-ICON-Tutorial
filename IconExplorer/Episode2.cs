@@ -22,14 +22,14 @@ namespace IconExplorer
             var getTransactionByHash = new GetTransactionByHash(WalletHelper.TestNetUrl);
             var result = getTransactionByHash.Invoke(tx).Result;
 
-            var ticks = NumericHelper.FromEpoch((long)result.Transaction.Timestamp.Value / 1000);
+            var ticks = Utils.FromEpoch((long)result.Transaction.Timestamp.Value / 1000);
 
             Console.WriteLine($"BlockHeight : {result.BlockHeight}");
             Console.WriteLine($"Transaction Timestamp : {ticks.ToLocalTime().ToString("yyyy-MM-dd, HH:mm:ss")}");
 
             if (result.Transaction.Value != null)
             {
-                Console.WriteLine($"Transaction Amount : {NumericHelper.Loop2ICX(result.Transaction.Value.Value)} ICX");
+                Console.WriteLine($"Transaction Amount : {Utils.Loop2ICX(result.Transaction.Value.Value)} ICX");
             }
 
             var json = JsonConvert.SerializeObject(result.Transaction.Data);

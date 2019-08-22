@@ -5,9 +5,8 @@ using System.Text;
 
 namespace IconExplorer
 {
-  
-
-    public class NumericHelper
+ 
+    public class Utils
     {
         static readonly DateTime EpochBase = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified);
         public static double Loop2ICX(BigInteger? balance, double powerOf = 0)
